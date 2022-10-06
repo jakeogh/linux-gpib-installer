@@ -1,0 +1,2 @@
+include fastentrypoints.py
+include _linux_gpib_installer_debian_11.sh
