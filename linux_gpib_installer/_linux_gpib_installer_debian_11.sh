@@ -4,14 +4,16 @@
 grep "Debian GNU/Linux 11" /etc/issue || { echo "This script requires Debian 11" ; exit 1 ; }
 set -x
 
-min_argcount=1
-max_argcount=1
-usage="linux_gpib_repo_path"
-test "$#" -ge "${min_argcount}" || { echo "$0 ${usage}" > /dev/stderr && exit 1 ; }
-test "$#" -le "${max_argcount}" || { echo "$0 ${usage}" > /dev/stderr && exit 1 ; }
+module_path=$(python3 << EOF
+from importlib import resources
+with resources.path('linux_gpib_installer', '_linux_gpib_installer_debian_11.sh') as rp:
+        print(rp.parent.as_posix())
+EOF
+)
 
-linux_gpib_repo="${1}"
-shift
+echo "${module_path}"
+
+linux_gpib_repo="${module_path}/linux-gpib"
 test -d "${linux_gpib_repo}" || { echo "${linux_gpib_repo} is not a directory. Exiting." ; exit 1 ; }
 
 PATH="/home/${USER}/.local/bin:${PATH}"
@@ -36,7 +38,7 @@ sudo apt-get install python3-serial -y || exit 1
 
 # https://github.com/drogenlied/linux-gpib-dkms
 cd linux-gpib-dkms || { git clone https://github.com/drogenlied/linux-gpib-dkms || exit 1 ; }
-cd linux-gpib-dkms && { git pull origin || exit 1 ; }
+cd linux-gpib-dkms && { git pull origin --ff-only || exit 1 ; }
 
 cd "${work}" || exit 1
 

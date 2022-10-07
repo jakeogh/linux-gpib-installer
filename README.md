@@ -152,9 +152,14 @@ Backends:
 
     a. The "READY" LED should be illuminated whenever the dongle is plugged into the computer.
 
-    b. the "ACTIVE" LED should illuminate whenever data is sent. Use the following "oneliner" to test it: `$ python3 -c "import pyvisa; rm=pyvisa.ResourceManager(); rm.list_resources()" > /dev/null 2>&1`
+    b. the "ACTIVE" LED should illuminate whenever data is sent. Use the following command to test it: `$ python3 -c "import pyvisa; rm=pyvisa.ResourceManager(); print(rm.list_resources())"`
 
     c. If the green "ACTIVE" LED illuminates, then the computer->GPIB-USB-HS is working correctly, and the problem is further down the line.
+
+
+### NOTE:
+
+The `libgpib: invalid descriptor` messages are normal. Use [gpibtool](https://github.com/jakeogh/gpibtool) `$ gpibtool addresses` if you want a convenient CLI to list addresses (and hide these messages).
 
 
 ### Examples:

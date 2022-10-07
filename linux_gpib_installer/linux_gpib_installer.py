@@ -33,6 +33,7 @@ from signal import signal
 
 import click
 from asserttool import ic
+from asserttool import not_root
 from click_auto_help import AHGroup
 from clicktool import click_add_options
 from clicktool import click_global_options
@@ -76,17 +77,12 @@ def debian_11(
         verbose=verbose,
         verbose_inf=verbose_inf,
     )
+    not_root()
     with resources.path(
         "linux_gpib_installer", "_linux_gpib_installer_debian_11.sh"
     ) as _installer_path:
-        with resources.path(
-            "linux_gpib_installer", "linux-gpib"
-        ) as _linux_gpib_repo_path:
-            ic(_installer_path)
-            ic(_linux_gpib_repo_path)
-            os.system(
-                ". "
-                + _installer_path.as_posix()
-                + " "
-                + _linux_gpib_repo_path.as_posix()
-            )
+        # _module_path = _installer_path.parent
+        _commands = [".", _installer_path.as_posix()]
+        _command = " ".join(_commands)
+        print(_command)
+        os.system(_command)

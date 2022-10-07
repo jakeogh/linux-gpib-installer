@@ -12,6 +12,8 @@ if not sys.version_info[0] == 3:
 
 dependencies = [
     "click",
+    "pyvisa",
+    "PyVISA-py",
     "asserttool @ git+https://git@github.com/jakeogh/asserttool",
     "clicktool @ git+https://git@github.com/jakeogh/clicktool",
     "click-auto-help @ git+https://git@github.com/jakeogh/click-auto-help",
