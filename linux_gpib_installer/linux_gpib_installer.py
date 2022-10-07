@@ -26,9 +26,6 @@ from __future__ import annotations
 
 import logging
 import os
-import sys
-import time
-from collections.abc import Sequence
 from importlib import resources
 from pathlib import Path
 from signal import SIG_DFL
@@ -42,12 +39,8 @@ from click_auto_help import AHGroup
 from clicktool import click_add_options
 from clicktool import click_global_options
 from clicktool import tv
-from eprint import eprint
-from timetool import get_timestamp
-from unmp import unmp
 
 sh.mv = None  # use sh.busybox('mv'), coreutils ignores stdin read errors
-
 
 # this should be earlier in the imports, but isort stops working
 signal(SIGPIPE, SIG_DFL)
@@ -90,5 +83,9 @@ def debian_11(
     _installer_path = resources.path(
         "linux_gpib_installer", "_linux_gpib_installer_debian_11.sh"
     )
+    _linux_gpib_repo_path = resources.path("linux_gpib_installer", "linux-gpib")
     ic(_installer_path)
-    os.system(". " + _installer_path.as_posix())
+    ic(_linux_gpib_repo_path)
+    os.system(
+        ". " + _installer_path.as_posix() + " " + _linux_gpib_repo_path.as_posix()
+    )

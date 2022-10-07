@@ -155,7 +155,7 @@ Backends:
     c. If the green "ACTIVE" LED illuminates, then the computer->GPIB-USB-HS is working correctly, and the problem is further down the line.
 
 
-### Examples:
+#### Examples:
 ```
 $ linux-gpib-installer
 
