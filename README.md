@@ -11,7 +11,7 @@ Automatic configuration is done for the National Instruments [GPIB-USB-HS](https
 ### Installation:
 ```
 $ sudo apt-get install python3-pip -y
-$ pip install git+https://git@github.com/jakeogh/linux-gpib-installer
+$ pip install --force-reinstall git+https://git@github.com/jakeogh/linux-gpib-installer
 $ source ~/.profile
 ```
 
