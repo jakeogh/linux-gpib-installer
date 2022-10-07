@@ -14,7 +14,7 @@ linux_gpib_repo="${1}"
 shift
 test -d "${linux_gpib_repo}" || { echo "${linux_gpib_repo} is not a directory. Exiting." ; exit 1 ; }
 
-PATH="/home/user/.local/bin:${PATH}"
+PATH="/home/${USER}/.local/bin:${PATH}"
 export PATH=${PATH}
 
 

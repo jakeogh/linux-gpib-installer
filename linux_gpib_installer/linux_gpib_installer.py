@@ -33,14 +33,11 @@ from signal import SIGPIPE
 from signal import signal
 
 import click
-import sh
 from asserttool import ic
 from click_auto_help import AHGroup
 from clicktool import click_add_options
 from clicktool import click_global_options
 from clicktool import tv
-
-sh.mv = None  # use sh.busybox('mv'), coreutils ignores stdin read errors
 
 # this should be earlier in the imports, but isort stops working
 signal(SIGPIPE, SIG_DFL)
@@ -84,6 +81,7 @@ def debian_11(
         "linux_gpib_installer", "_linux_gpib_installer_debian_11.sh"
     )
     _linux_gpib_repo_path = resources.path("linux_gpib_installer", "linux-gpib")
+    ic(dir(_installer_path))
     ic(_installer_path)
     ic(_linux_gpib_repo_path)
     os.system(

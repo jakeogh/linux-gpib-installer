@@ -10,7 +10,9 @@ Automatic configuration is done for the National Instruments [GPIB-USB-HS](https
 
 ### Installation:
 ```
+$ sudo apt-get install python3-pip -y
 $ pip install git+https://git@github.com/jakeogh/linux-gpib-installer
+$ source ~/.profile
 ```
 
 ### Usage:
@@ -155,7 +157,7 @@ Backends:
     c. If the green "ACTIVE" LED illuminates, then the computer->GPIB-USB-HS is working correctly, and the problem is further down the line.
 
 
-#### Examples:
+### Examples:
 ```
 $ linux-gpib-installer
 
