@@ -10,11 +10,12 @@ import fastentrypoints
 if not sys.version_info[0] == 3:
     sys.exit("Python 3 is required. Use: 'python3 setup.py install'")
 
-dependencies = ["icecream", "click"]
-
-#    "package_data": {
-#        "linux_gpib_installer": ["py.typed, _linux_gpib_installer_debian_11.sh"]
-#    },
+dependencies = [
+    "click",
+    "asserttool @ git+https://git@github.com/jakeogh/asserttool",
+    "clicktool @ git+https://git@github.com/jakeogh/clicktool",
+    "click-auto-help @ git+https://git@github.com/jakeogh/click-auto-help",
+]
 
 config = {
     "version": "0.1",
