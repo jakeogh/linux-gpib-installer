@@ -27,7 +27,6 @@ from __future__ import annotations
 import logging
 import os
 from importlib import resources
-from pathlib import Path
 from signal import SIG_DFL
 from signal import SIGPIPE
 from signal import signal
@@ -77,13 +76,17 @@ def debian_11(
         verbose=verbose,
         verbose_inf=verbose_inf,
     )
-    _installer_path = resources.path(
+    with resources.path(
         "linux_gpib_installer", "_linux_gpib_installer_debian_11.sh"
-    )
-    _linux_gpib_repo_path = resources.path("linux_gpib_installer", "linux-gpib")
-    ic(dir(_installer_path))
-    ic(_installer_path)
-    ic(_linux_gpib_repo_path)
-    os.system(
-        ". " + _installer_path.as_posix() + " " + _linux_gpib_repo_path.as_posix()
-    )
+    ) as _installer_path:
+        with resources.path(
+            "linux_gpib_installer", "linux-gpib"
+        ) as _linux_gpib_repo_path:
+            ic(_installer_path)
+            ic(_linux_gpib_repo_path)
+            os.system(
+                ". "
+                + _installer_path.as_posix()
+                + " "
+                + _linux_gpib_repo_path.as_posix()
+            )
