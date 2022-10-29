@@ -40,22 +40,16 @@ This will install the linux-gpib kernel drivers and userspace components. If the
 1. Execute a test program:
 
 ```
-$ ipython
-Python 3.9.2 (default, Feb 28 2021, 17:03:44)
-Type 'copyright', 'credits' or 'license' for more information
-IPython 8.5.0 -- An enhanced Interactive Python. Type '?' for help.
-
-In [1]: import pyvisa
-
-In [2]: rm = pyvisa.ResourceManager()
-
-In [3]: rm.list_resources()
-libgpib: invalid descriptor  # note this message is repeated, this is normal and needs to be fixed in the linux-gpib package
-Out[3]: ('ASRL/dev/ttyS0::INSTR', 'GPIB0::2::INSTR')
-
-In [4]: inst = rm.open_resource('GPIB0::2::INSTR')
-
-In [5]: print(inst.query("*IDN?"))
+$ python
+Python 3.10.8 (main, Oct 26 2022, 13:25:27) [GCC 11.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pyvisa
+>>> rm = pyvisa.ResourceManager()
+>>> rm.list_resources()
+libgpib: invalid descriptor  # NOTE: this message is repeated, this is normal and needs to be fixed in the linux-gpib package
+('ASRL/dev/ttyS0::INSTR', 'ASRL/dev/ttyUSB0::INSTR', 'GPIB0::2::INSTR')
+>>> inst = rm.open_resource('GPIB0::2::INSTR')
+>>> print(inst.query("*IDN?"))
 TEKTRONIX,AFG3022B,C037086,SCPI:99.0 FV:3.2.2
 
 ```
