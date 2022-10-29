@@ -4,7 +4,7 @@
 
 It is an automated implementation of the instructions found at: https://gist.github.com/jonathanschilling/07defddc272fe35c7412d51dffa0bb6f
 
-Currently only [Debian 11](https://www.linuxtechi.com/how-to-install-debian-11-bullseye/) is supported.
+Currently only [Debian 11](https://www.linuxtechi.com/how-to-install-debian-11-bullseye/) (aka Bullseye) is supported.
 
 Automatic configuration is done for the National Instruments [GPIB-USB-HS](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000P8kcSAC) USB dongle, if you are using a PCI card, please see `/etc/gpib.conf.example` and make the approprate changes to `/etc/gpib.conf`
 
