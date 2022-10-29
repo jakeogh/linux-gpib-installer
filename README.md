@@ -6,7 +6,7 @@ It is an automated implementation of the instructions found at: https://gist.git
 
 Currently only [Debian 11](https://www.linuxtechi.com/how-to-install-debian-11-bullseye/) (aka Bullseye) is supported.
 
-Automatic configuration is done for the National Instruments [GPIB-USB-HS](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000P8kcSAC) USB dongle, if you are using a PCI card, please see `/etc/gpib.conf.example` and make the approprate changes to `/etc/gpib.conf`
+Automatic configuration is done for the National Instruments [GPIB-USB-HS](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000P8kcSAC) USB dongle, if you are using a PCI card, please see `/etc/gpib.conf.example` and make the appropriate changes to `/etc/gpib.conf`.
 
 ### Installation:
 ```
@@ -148,7 +148,7 @@ Backends:
 
     b. The "ACTIVE" LED should illuminate whenever data is sent. Use the following command to test it: `$ python3 -c "import pyvisa; rm=pyvisa.ResourceManager(); print(rm.list_resources())"`
 
-    c. If the green "ACTIVE" LED illuminates, then the computer->GPIB-USB-HS is working correctly, and the problem is further down the line.
+    c. If the green "ACTIVE" LED illuminates, then the computer->GPIB-USB-HS is working correctly, and the problem is further down the line. **Verify the GPIB connector is correctly seated in the instrument.**
 
 
 ### NOTE:
