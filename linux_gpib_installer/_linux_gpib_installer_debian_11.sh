@@ -32,9 +32,6 @@ sudo apt-get install python3-pip -y || exit 1
 sudo apt-get install python3-usb -y || exit 1
 sudo apt-get install python3-serial -y || exit 1
 #sudo apt-get install python3-pyvisa-py -y || exit 1  # pip installs a newer version
-#sudo apt-get install python3-wxgtk4.0 -y || exit 1 # for cyclodial_client
-
-# cwd == ${work}
 
 # https://github.com/drogenlied/linux-gpib-dkms
 cd linux-gpib-dkms || { git clone https://github.com/drogenlied/linux-gpib-dkms || exit 1 ; }
