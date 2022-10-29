@@ -5,8 +5,6 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-# import fastentrypoints
-
 if not sys.version_info[0] == 3:
     sys.exit("Python 3 is required. Use: 'python3 setup.py install'")
 
@@ -14,16 +12,13 @@ dependencies = [
     "click",
     "pyvisa",
     "PyVISA-py",
-    "asserttool @ git+https://git@github.com/jakeogh/asserttool",
-    "clicktool @ git+https://git@github.com/jakeogh/clicktool",
-    "click-auto-help @ git+https://git@github.com/jakeogh/click-auto-help",
 ]
 
 config = {
     "version": "0.1",
     "name": "linux_gpib_installer",
     "url": "https://github.com/jakeogh/linux-gpib-installer",
-    "license": "ISC",
+    "license": "Unlicense",
     "author": "Justin Keogh",
     "author_email": "github.com@v6y.net",
     "description": "installer for GPIB drivers",
