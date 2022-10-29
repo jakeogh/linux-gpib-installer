@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 # tab-width:4
+# disable: byte-vector-replacer
 
 import os
 import sys
@@ -21,7 +22,6 @@ def cli() -> None:
 
 
 @cli.command()
-@click.pass_context
 def debian_11() -> None:
 
     if root_user():

@@ -162,7 +162,6 @@ The `libgpib: invalid descriptor` messages are normal. Use [gpibtool](https://gi
 
 ### Examples:
 ```
-
 $ linux-gpib-installer --help
 Usage: linux-gpib-installer [OPTIONS] COMMAND [ARGS]...
 
