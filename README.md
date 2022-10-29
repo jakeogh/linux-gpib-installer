@@ -169,10 +169,7 @@ $ linux-gpib-installer --help
 Usage: linux-gpib-installer [OPTIONS] COMMAND [ARGS]...
 
 Options:
-  -v, --verbose
-  --dict
-  --verbose-inf
-  --help         Show this message and exit.
+  --help  Show this message and exit.
 
 Commands:
   debian-11

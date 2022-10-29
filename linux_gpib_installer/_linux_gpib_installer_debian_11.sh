@@ -71,12 +71,5 @@ interface {
 }
 EOF
 sudo ldconfig
-#sudo pip install git+https://git@github.com/jakeogh/replace-text || exit 1
-#sudo apt-get install x11vnc -y || exit 1
-#grep -E "^WaylandEnable=false" /etc/gdm3/daemon.conf || { mpp /etc/gdm3/daemon.conf | sudo replace-text --match "#WaylandEnable=false" --replacement "WaylandEnable=false" ; }
-#grep -E "^AutomaticLoginEnable=true" /etc/gdm3/daemon.conf || { mpp /etc/gdm3/daemon.conf | sudo replace-text --match "#  AutomaticLoginEnable = true" --replacement "AutomaticLoginEnable=true" ; }
-#grep -E "^AutomaticLogin=$USER" /etc/gdm3/daemon.conf || { mpp /etc/gdm3/daemon.conf | sudo replace-text --match "#  AutomaticLogin = user1" --replacement "AutomaticLogin=$USER" ; }
-#
-#cd ~/cycloidal_client && pip install . || exit 1
 
 echo "Debian 11 linux-gpib install completed OK, A REBOOT IS REQUIRED."
