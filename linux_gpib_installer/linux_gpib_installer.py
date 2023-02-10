@@ -23,7 +23,6 @@ def cli() -> None:
 
 @cli.command()
 def debian_11() -> None:
-
     if root_user():
         print("Dont run this as root.", file=sys.stderr)
         sys.exit(1)

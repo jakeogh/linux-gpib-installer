@@ -19,7 +19,6 @@ test -d "${linux_gpib_repo}" || { echo "${linux_gpib_repo} is not a directory. E
 PATH="/home/${USER}/.local/bin:${PATH}"
 export PATH=${PATH}
 
-
 work="/home/${USER}/tmp"
 mkdir "/home/${USER}/tmp" > /dev/null 2>&1
 test -d "${linux_gpib_repo}" || { echo "${work} is not a directory. Exiting." ; exit 1 ; }
