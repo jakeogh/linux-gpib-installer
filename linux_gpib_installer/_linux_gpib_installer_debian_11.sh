@@ -57,6 +57,7 @@ make && sudo make install || exit 1
 sudo groupadd gpib # dont exit on $? != 0, groupadd exits 1 if the group already exists
 sudo gpasswd -a "$USER" gpib || exit 1
 sudo gpasswd -a "$USER" dialout || exit 1
+grep -E 'SUBSYSTEM=="usb", MODE="0666", GROUP="usbusers"' /etc/udev/rules.d/99-com.rules > /dev/null 2>&1 || sudo sh -c "echo 'SUBSYSTEM==\"usb\", MODE=\"0666\", GROUP=\"usbusers\"' >> /etc/udev/rules.d/99-com.rules"
 grep "GPIB.CONF IEEE488 library config file" /etc/gpib.conf && sudo mv /etc/gpib.conf /etc/gpib.conf.example
 cat << EOF | sudo tee /etc/gpib.conf
 interface {
