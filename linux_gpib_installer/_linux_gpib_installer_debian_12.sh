@@ -30,6 +30,7 @@ sudo apt-get install devscripts dkms subversion git -y || exit 1
 sudo apt-get install python3-pip -y || exit 1
 sudo apt-get install python3-usb -y || exit 1
 sudo apt-get install python3-serial -y || exit 1
+sudo apt-get install dh-dkms -y || exit 1
 #sudo apt-get install python3-pyvisa-py -y || exit 1  # pip installs a newer version
 
 # https://github.com/drogenlied/linux-gpib-dkms
