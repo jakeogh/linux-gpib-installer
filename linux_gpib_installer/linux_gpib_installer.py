@@ -34,3 +34,17 @@ def debian_11() -> None:
         _command = " ".join(_commands)
         print(_command)
         os.system(_command)
+
+@cli.command()
+def debian_12() -> None:
+    if root_user():
+        print("Dont run this as root.", file=sys.stderr)
+        sys.exit(1)
+
+    with resources.path(
+        "linux_gpib_installer", "_linux_gpib_installer_debian_12.sh"
+    ) as _installer_path:
+        _commands = [".", _installer_path.as_posix()]
+        _command = " ".join(_commands)
+        print(_command)
+        os.system(_command)

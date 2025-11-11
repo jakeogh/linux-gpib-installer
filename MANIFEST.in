@@ -1,2 +1,3 @@
 include linux_gpib_installer/_linux_gpib_installer_debian_11.sh
+include linux_gpib_installer/_linux_gpib_installer_debian_12.sh
 recursive-include linux_gpib_installer/linux-gpib *
